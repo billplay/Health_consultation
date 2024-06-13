@@ -8,6 +8,10 @@ const io = socketIo(server);
 
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
+
 io.on('connection', socket => {
     console.log('New client connected');
     socket.on('disconnect', () => {
